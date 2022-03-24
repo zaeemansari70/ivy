@@ -79,12 +79,13 @@
               
             
             
-              <p class="caption"><span class="caption-text">Guides</span></p>
+              <p class="caption"><span class="caption-text">Overview</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="why_ivy.html">Why Ivy?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="using_ivy.html">Using Ivy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="training_a_network.html">Training a Network</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to Ivy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extensions.html">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Functional</span></p>
 <ul>
@@ -313,10 +314,10 @@
 </li>
       <li><a href="container/Container.html#ivy.container.Container.as_bools">as_bools() (ivy.container.Container method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="container/Container.html#ivy.container.Container.as_ones">as_ones() (ivy.container.Container method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="container/Container.html#ivy.container.Container.as_random_uniform">as_random_uniform() (ivy.container.Container method)</a>
 </li>
       <li><a href="container/Container.html#ivy.container.Container.as_variables">as_variables() (ivy.container.Container method)</a>
@@ -338,6 +339,8 @@
       <li><a href="container/Container.html#ivy.container.Container.assert_identical_structure">assert_identical_structure() (ivy.container.Container static method)</a>
 </li>
       <li><a href="functional/ivy/general.html#ivy.functional.ivy.general.assert_supports_inplace">assert_supports_inplace() (in module ivy.functional.ivy.general)</a>, <a href="functional/ivy/general/assert_supports_inplace.html#ivy.functional.ivy.general.assert_supports_inplace">[1]</a>
+</li>
+      <li><a href="functional/ivy/data_type.html#ivy.functional.ivy.data_type.astype">astype() (in module ivy.functional.ivy.data_type)</a>
 </li>
       <li><a href="container/MultiDevContainer.html#ivy.container.MultiDevContainer.at_dev">at_dev() (ivy.container.MultiDevContainer method)</a>
 
@@ -393,6 +396,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="functional/ivy/general.html#ivy.functional.ivy.general.cache_fn">cache_fn() (in module ivy.functional.ivy.general)</a>, <a href="functional/ivy/general/cache_fn.html#ivy.functional.ivy.general.cache_fn">[1]</a>
 </li>
+      <li><a href="functional/ivy/data_type.html#ivy.functional.ivy.data_type.cast">cast() (in module ivy.functional.ivy.data_type)</a>, <a href="functional/ivy/data_type/cast.html#ivy.functional.ivy.data_type.cast">[1]</a>
+</li>
       <li><a href="functional/ivy/elementwise.html#ivy.functional.ivy.elementwise.ceil">ceil() (in module ivy.functional.ivy.elementwise)</a>, <a href="functional/ivy/elementwise/ceil.html#ivy.functional.ivy.elementwise.ceil">[1]</a>
 </li>
       <li><a href="functional/ivy/linear_algebra.html#ivy.functional.ivy.linear_algebra.cholesky">cholesky() (in module ivy.functional.ivy.linear_algebra)</a>, <a href="functional/ivy/linear_algebra/cholesky.html#ivy.functional.ivy.linear_algebra.cholesky">[1]</a>
@@ -413,6 +418,8 @@
         <li><a href="container/Container.html#ivy.container.Container.clip_vector_norm">(ivy.container.Container method)</a>
 </li>
       </ul></li>
+      <li><a href="functional/ivy/data_type.html#ivy.functional.ivy.data_type.closest_valid_dtype">closest_valid_dtype() (in module ivy.functional.ivy.data_type)</a>, <a href="functional/ivy/data_type/closest_valid_dtype.html#ivy.functional.ivy.data_type.closest_valid_dtype">[1]</a>
+</li>
       <li><a href="container/Container.html#ivy.container.Container.combine">combine() (ivy.container.Container static method)</a>
 </li>
       <li><a href="container/Container.html#ivy.container.Container.common_key_chains">common_key_chains() (ivy.container.Container static method)</a>
@@ -433,10 +440,10 @@
 </li>
       <li><a href="container/Container.html#ivy.container.Container.contains_sub_structure">contains_sub_structure() (ivy.container.Container method)</a>
 </li>
-      <li><a href="framework_handler.html#ivy.framework_handler.ContextManager">ContextManager (class in ivy.framework_handler)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="framework_handler.html#ivy.framework_handler.ContextManager">ContextManager (class in ivy.framework_handler)</a>
+</li>
       <li><a href="functional/ivy/layers.html#ivy.functional.ivy.layers.conv1d">conv1d() (in module ivy.functional.ivy.layers)</a>, <a href="functional/ivy/layers/conv1d.html#ivy.functional.ivy.layers.conv1d">[1]</a>
 </li>
       <li><a href="functional/ivy/layers.html#ivy.functional.ivy.layers.conv1d_transpose">conv1d_transpose() (in module ivy.functional.ivy.layers)</a>, <a href="functional/ivy/layers/conv1d_transpose.html#ivy.functional.ivy.layers.conv1d_transpose">[1]</a>
@@ -611,6 +618,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="functional/ivy/constants.html#ivy.functional.ivy.constants.e">e (in module ivy.functional.ivy.constants)</a>
 </li>
+      <li><a href="functional/ivy/linear_algebra.html#ivy.functional.ivy.linear_algebra.eigvalsh">eigvalsh() (in module ivy.functional.ivy.linear_algebra)</a>, <a href="functional/ivy/linear_algebra/eigvalsh.html#ivy.functional.ivy.linear_algebra.eigvalsh">[1]</a>
+</li>
       <li><a href="functional/ivy/general.html#ivy.functional.ivy.general.einops_rearrange">einops_rearrange() (in module ivy.functional.ivy.general)</a>, <a href="functional/ivy/general/einops_rearrange.html#ivy.functional.ivy.general.einops_rearrange">[1]</a>
 
       <ul>
@@ -655,6 +664,8 @@
         <li><a href="container/Container.html#ivy.container.Container.expand_dims">(ivy.container.Container method)</a>
 </li>
       </ul></li>
+      <li><a href="functional/ivy/elementwise.html#ivy.functional.ivy.elementwise.expm1">expm1() (in module ivy.functional.ivy.elementwise)</a>, <a href="functional/ivy/elementwise/expm1.html#ivy.functional.ivy.elementwise.expm1">[1]</a>
+</li>
       <li><a href="functional/ivy/creation.html#ivy.functional.ivy.creation.eye">eye() (in module ivy.functional.ivy.creation)</a>, <a href="functional/ivy/creation/eye.html#ivy.functional.ivy.creation.eye">[1]</a>
 </li>
   </ul></td>
@@ -711,10 +722,18 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="container/Container.html#ivy.container.Container.gather">gather() (ivy.container.Container method)</a>
+      <li><a href="functional/ivy/general.html#ivy.functional.ivy.general.gather">gather() (in module ivy.functional.ivy.general)</a>, <a href="functional/ivy/general/gather.html#ivy.functional.ivy.general.gather">[1]</a>
+
+      <ul>
+        <li><a href="container/Container.html#ivy.container.Container.gather">(ivy.container.Container method)</a>
 </li>
-      <li><a href="container/Container.html#ivy.container.Container.gather_nd">gather_nd() (ivy.container.Container method)</a>
+      </ul></li>
+      <li><a href="functional/ivy/general.html#ivy.functional.ivy.general.gather_nd">gather_nd() (in module ivy.functional.ivy.general)</a>, <a href="functional/ivy/general/gather_nd.html#ivy.functional.ivy.general.gather_nd">[1]</a>
+
+      <ul>
+        <li><a href="container/Container.html#ivy.container.Container.gather_nd">(ivy.container.Container method)</a>
 </li>
+      </ul></li>
       <li><a href="functional/ivy/activations.html#ivy.functional.ivy.activations.gelu">gelu() (in module ivy.functional.ivy.activations)</a>, <a href="functional/ivy/activations/gelu.html#ivy.functional.ivy.activations.gelu">[1]</a>
 </li>
       <li><a href="functional/ivy/general.html#ivy.functional.ivy.general.get_all_arrays_in_memory">get_all_arrays_in_memory() (in module ivy.functional.ivy.general)</a>, <a href="functional/ivy/general/get_all_arrays_in_memory.html#ivy.functional.ivy.general.get_all_arrays_in_memory">[1]</a>
@@ -723,10 +742,10 @@
 </li>
       <li><a href="framework_handler.html#ivy.framework_handler.get_framework">get_framework() (in module ivy.framework_handler)</a>, <a href="framework_handler/get_framework.html#ivy.framework_handler.get_framework">[1]</a>
 </li>
-      <li><a href="functional/ivy/general.html#ivy.functional.ivy.general.get_min_base">get_min_base() (in module ivy.functional.ivy.general)</a>, <a href="functional/ivy/general/get_min_base.html#ivy.functional.ivy.general.get_min_base">[1]</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="functional/ivy/general.html#ivy.functional.ivy.general.get_min_base">get_min_base() (in module ivy.functional.ivy.general)</a>, <a href="functional/ivy/general/get_min_base.html#ivy.functional.ivy.general.get_min_base">[1]</a>
+</li>
       <li><a href="functional/ivy/general.html#ivy.functional.ivy.general.get_min_denominator">get_min_denominator() (in module ivy.functional.ivy.general)</a>, <a href="functional/ivy/general/get_min_denominator.html#ivy.functional.ivy.general.get_min_denominator">[1]</a>
 </li>
       <li><a href="functional/ivy/general.html#ivy.functional.ivy.general.get_referrers_recursive">get_referrers_recursive() (in module ivy.functional.ivy.general)</a>, <a href="functional/ivy/general/get_referrers_recursive.html#ivy.functional.ivy.general.get_referrers_recursive">[1]</a>
@@ -1064,6 +1083,8 @@
 </li>
       <li><a href="functional/ivy/elementwise.html#ivy.functional.ivy.elementwise.logical_or">logical_or() (in module ivy.functional.ivy.elementwise)</a>, <a href="functional/ivy/elementwise/logical_or.html#ivy.functional.ivy.elementwise.logical_or">[1]</a>
 </li>
+      <li><a href="functional/ivy/elementwise.html#ivy.functional.ivy.elementwise.logical_xor">logical_xor() (in module ivy.functional.ivy.elementwise)</a>, <a href="functional/ivy/elementwise/logical_xor.html#ivy.functional.ivy.elementwise.logical_xor">[1]</a>
+</li>
       <li><a href="functional/ivy/creation.html#ivy.functional.ivy.creation.logspace">logspace() (in module ivy.functional.ivy.creation)</a>, <a href="functional/ivy/creation/logspace.html#ivy.functional.ivy.creation.logspace">[1]</a>
 </li>
       <li><a href="functional/ivy/layers.html#ivy.functional.ivy.layers.lstm_update">lstm_update() (in module ivy.functional.ivy.layers)</a>, <a href="functional/ivy/layers/lstm_update.html#ivy.functional.ivy.layers.lstm_update">[1]</a>
@@ -1237,9 +1258,11 @@
 </li>
       <li><a href="functional/ivy/creation.html#ivy.functional.ivy.creation.ones_like">ones_like() (in module ivy.functional.ivy.creation)</a>, <a href="functional/ivy/creation/ones_like.html#ivy.functional.ivy.creation.ones_like">[1]</a>
 </li>
+      <li><a href="functional/ivy/gradients.html#ivy.functional.ivy.gradients.optimizer_update">optimizer_update() (in module ivy.functional.ivy.gradients)</a>, <a href="functional/ivy/gradients/optimizer_update.html#ivy.functional.ivy.gradients.optimizer_update">[1]</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="functional/ivy/gradients.html#ivy.functional.ivy.gradients.optimizer_update">optimizer_update() (in module ivy.functional.ivy.gradients)</a>, <a href="functional/ivy/gradients/optimizer_update.html#ivy.functional.ivy.gradients.optimizer_update">[1]</a>
+      <li><a href="functional/ivy/linear_algebra.html#ivy.functional.ivy.linear_algebra.outer">outer() (in module ivy.functional.ivy.linear_algebra)</a>, <a href="functional/ivy/linear_algebra/outer.html#ivy.functional.ivy.linear_algebra.outer">[1]</a>
 </li>
       <li><a href="container/Container.html#ivy.container.Container.overwrite_at_key_chain">overwrite_at_key_chain() (ivy.container.Container method)</a>
 </li>
@@ -1321,12 +1344,14 @@
 </li>
       <li><a href="functional/ivy/activations.html#ivy.functional.ivy.activations.relu">relu() (in module ivy.functional.ivy.activations)</a>, <a href="functional/ivy/activations/relu.html#ivy.functional.ivy.activations.relu">[1]</a>
 </li>
-      <li><a href="container/Container.html#ivy.container.Container.remove_key_length_limit">remove_key_length_limit() (ivy.container.Container method)</a>
+      <li><a href="functional/ivy/elementwise.html#ivy.functional.ivy.elementwise.remainder">remainder() (in module ivy.functional.ivy.elementwise)</a>, <a href="functional/ivy/elementwise/remainder.html#ivy.functional.ivy.elementwise.remainder">[1]</a>
 </li>
-      <li><a href="container/Container.html#ivy.container.Container.remove_print_limit">remove_print_limit() (ivy.container.Container method)</a>
+      <li><a href="container/Container.html#ivy.container.Container.remove_key_length_limit">remove_key_length_limit() (ivy.container.Container method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="container/Container.html#ivy.container.Container.remove_print_limit">remove_print_limit() (ivy.container.Container method)</a>
+</li>
       <li><a href="functional/ivy/manipulation.html#ivy.functional.ivy.manipulation.repeat">repeat() (in module ivy.functional.ivy.manipulation)</a>, <a href="functional/ivy/manipulation/repeat.html#ivy.functional.ivy.manipulation.repeat">[1]</a>
 
       <ul>
@@ -1429,10 +1454,10 @@
       </ul></li>
       <li><a href="container/Container.html#ivy.container.Container.shuffle_h5_file">shuffle_h5_file() (ivy.container.Container static method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="functional/ivy/activations.html#ivy.functional.ivy.activations.sigmoid">sigmoid() (in module ivy.functional.ivy.activations)</a>, <a href="functional/ivy/activations/sigmoid.html#ivy.functional.ivy.activations.sigmoid">[1]</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="functional/ivy/elementwise.html#ivy.functional.ivy.elementwise.sin">sin() (in module ivy.functional.ivy.elementwise)</a>, <a href="functional/ivy/elementwise/sin.html#ivy.functional.ivy.elementwise.sin">[1]</a>
 </li>
       <li><a href="functional/ivy/elementwise.html#ivy.functional.ivy.elementwise.sinh">sinh() (in module ivy.functional.ivy.elementwise)</a>, <a href="functional/ivy/elementwise/sinh.html#ivy.functional.ivy.elementwise.sinh">[1]</a>
@@ -1490,6 +1515,8 @@
       <li><a href="container/Container.html#ivy.container.Container.stop_gradients">stop_gradients() (ivy.container.Container method)</a>
 </li>
       <li><a href="container/Container.html#ivy.container.Container.structural_diff">structural_diff() (ivy.container.Container static method)</a>
+</li>
+      <li><a href="functional/ivy/elementwise.html#ivy.functional.ivy.elementwise.subtract">subtract() (in module ivy.functional.ivy.elementwise)</a>, <a href="functional/ivy/elementwise/subtract.html#ivy.functional.ivy.elementwise.subtract">[1]</a>
 </li>
       <li><a href="functional/ivy/statistical.html#ivy.functional.ivy.statistical.sum">sum() (in module ivy.functional.ivy.statistical)</a>, <a href="functional/ivy/statistical/sum.html#ivy.functional.ivy.statistical.sum">[1]</a>
 
