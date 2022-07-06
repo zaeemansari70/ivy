@@ -36,7 +36,7 @@ einsum
    :maxdepth: -1
    :caption: einsum
 
-   einsum/einsum_container.rst
-   einsum/einsum_array.rst
    einsum/einsum_functional.rst
+   einsum/einsum_array.rst
+   einsum/einsum_container.rst
 
