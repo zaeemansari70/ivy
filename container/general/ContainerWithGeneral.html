@@ -256,8 +256,14 @@ with minimal changes.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">gather_nd</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="go">{</span>
-<span class="go">    a: ivy.array(3),</span>
-<span class="go">    b: ivy.array(3)</span>
+<span class="go">    a: {</span>
+<span class="go">            a: ivy.array(3),</span>
+<span class="go">            b: ivy.array(2)</span>
+<span class="go">        },</span>
+<span class="go">    b: {</span>
+<span class="go">            a: ivy.array(4),</span>
+<span class="go">            b: ivy.array(3)</span>
+<span class="go">        }</span>
 <span class="go">}</span>
 </pre></div>
 </div>
