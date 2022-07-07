@@ -101,6 +101,8 @@ Container methods
    container_methods/static_lamb_update.rst
    container_methods/lamb_update.rst
    container_methods/matmul.rst
+   container_methods/static_cholesky.rst
+   container_methods/cholesky.rst
    container_methods/static_cross_entropy.rst
    container_methods/cross_entropy.rst
    container_methods/static_binary_cross_entropy.rst
