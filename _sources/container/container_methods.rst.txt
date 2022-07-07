@@ -17,6 +17,7 @@ Container methods
    container_methods/at_devs.rst
    container_methods/static_can_cast.rst
    container_methods/can_cast.rst
+   container_methods/static_abs.rst
    container_methods/abs.rst
    container_methods/acosh.rst
    container_methods/acos.rst
@@ -85,6 +86,8 @@ Container methods
    container_methods/all_equal.rst
    container_methods/static_gather_nd.rst
    container_methods/gather_nd.rst
+   container_methods/static_is_variable.rst
+   container_methods/is_variable.rst
    container_methods/static_adam_step.rst
    container_methods/adam_step.rst
    container_methods/static_optimizer_update.rst
