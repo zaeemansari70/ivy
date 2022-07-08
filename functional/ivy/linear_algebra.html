@@ -267,9 +267,9 @@ the same shape as x.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="go">{</span>
 <span class="go">    a: ivy.array([[1.73, -0.577],</span>
-<span class="go">                  [0., 1.63]]),</span>
+<span class="go">                    [0., 1.63]]),</span>
 <span class="go">    b: ivy.array([[1.41, 0.707],</span>
-<span class="go">                  [0., 0.707]])</span>
+<span class="go">                    [0., 0.707]])</span>
 <span class="go">}</span>
 </pre></div>
 </div>
@@ -280,9 +280,9 @@ the same shape as x.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="go">{</span>
 <span class="go">    a: ivy.array([[1.73, -0.577],</span>
-<span class="go">                  [0., 1.63]]),</span>
+<span class="go">                    [0., 1.63]]),</span>
 <span class="go">    b: ivy.array([[1.41, 0.707],</span>
-<span class="go">                  [0., 0.707]])</span>
+<span class="go">                    [0., 0.707]])</span>
 <span class="go">}</span>
 </pre></div>
 </div>
@@ -297,18 +297,6 @@ the same shape as x.</p>
 <dt>ivy.array([[ 1., -2.],</dt><dd><p>[ 0.,  1.]])</p>
 </dd>
 </dl>
-<p>Using <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code> instance method:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">3.</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">]]),</span>                           <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]]))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="s1">&#39;false&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">{</span>
-<span class="go">    a: ivy.array([[1.73, -0.577],</span>
-<span class="go">                  [0., 1.63]]),</span>
-<span class="go">    b: ivy.array([[1.41, 0.707],</span>
-<span class="go">                  [0., 0.707]])</span>
-<span class="go">}</span>
-</pre></div>
-</div>
 </dd></dl>
 
 <dl class="py function">

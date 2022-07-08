@@ -263,9 +263,9 @@
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    {</span>
 <span class="sd">        a: ivy.array([[1.73, -0.577],</span>
-<span class="sd">                      [0., 1.63]]),</span>
+<span class="sd">                        [0., 1.63]]),</span>
 <span class="sd">        b: ivy.array([[1.41, 0.707],</span>
-<span class="sd">                      [0., 0.707]])</span>
+<span class="sd">                        [0., 0.707]])</span>
 <span class="sd">    }</span>
 
 <span class="sd">    With multiple :code:`ivy.Container` inputs:</span>
@@ -277,9 +277,9 @@
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    {</span>
 <span class="sd">        a: ivy.array([[1.73, -0.577],</span>
-<span class="sd">                      [0., 1.63]]),</span>
+<span class="sd">                        [0., 1.63]]),</span>
 <span class="sd">        b: ivy.array([[1.41, 0.707],</span>
-<span class="sd">                      [0., 0.707]])</span>
+<span class="sd">                        [0., 0.707]])</span>
 <span class="sd">    }</span>
 
 <span class="sd">    With a mix of :code:`ivy.Array` and :code:`ivy.Container` inputs:</span>
@@ -291,19 +291,6 @@
 
 <span class="sd">    ivy.array([[ 1., -2.],</span>
 <span class="sd">               [ 0.,  1.]])</span>
-
-<span class="sd">    Using :code:`ivy.Container` instance method:</span>
-
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[3., -1.], [-1., 3.]]), \</span>
-<span class="sd">                          b=ivy.array([[2., 1.], [1., 1.]]))</span>
-<span class="sd">    &gt;&gt;&gt; y = x.cholesky(&#39;false&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; print(y)</span>
-<span class="sd">    {</span>
-<span class="sd">        a: ivy.array([[1.73, -0.577],</span>
-<span class="sd">                      [0., 1.63]]),</span>
-<span class="sd">        b: ivy.array([[1.41, 0.707],</span>
-<span class="sd">                      [0., 0.707]])</span>
-<span class="sd">    }</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">current_backend</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
