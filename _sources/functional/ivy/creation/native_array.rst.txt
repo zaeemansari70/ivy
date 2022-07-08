@@ -2,6 +2,8 @@ native_array
 ============
 
 .. autofunction:: ivy.functional.ivy.creation.native_array
+
+.. autofunction:: ivy.array.array_methods.native_array
 |
 | **Supported Frameworks:**
 
