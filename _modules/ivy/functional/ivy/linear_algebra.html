@@ -167,6 +167,10 @@
 <span class="sd">        have a floating-point data type determined by Type Promotion Rules and must have</span>
 <span class="sd">        the same shape as x.</span>
 
+<span class="sd">    Both the description and the type hints above assumes an array input for simplicity,</span>
+<span class="sd">    but this function is *nestable*, and therefore also accepts :code:`ivy.Container`</span>
+<span class="sd">    instances in place of any of the arguments.</span>
+
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    With :code:`ivy.Array` input:</span>

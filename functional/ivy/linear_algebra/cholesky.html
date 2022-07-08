@@ -172,11 +172,17 @@ inputs broadcast to.</p></li>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
 </dd>
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>ret</em> – an array containing the Cholesky factors for each square matrix. If upper is
+<dd class="field-odd"><p><ul class="simple">
+<li><p><em>ret</em> – an array containing the Cholesky factors for each square matrix. If upper is
 False, the returned array must contain lower-triangular matrices; otherwise, the
 returned array must contain upper-triangular matrices. The returned array must
 have a floating-point data type determined by Type Promotion Rules and must have
-the same shape as x.</p>
+the same shape as x.</p></li>
+<li><p><em>Both the description and the type hints above assumes an array input for simplicity,</em></p></li>
+<li><p>but this function is <em>nestable</em>, and therefore also accepts <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code></p></li>
+<li><p><em>instances in place of any of the arguments.</em></p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
