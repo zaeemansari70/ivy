@@ -72,16 +72,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../../functional/ivy/statistical.html">Statistical</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../functional/ivy/utility.html">Utility</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Stateful</span></p>
+<p class="caption" role="heading"><span class="caption-text">Data Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_classes/container.html">Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_classes/array.html">Array</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../stateful/converters.html">Converters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/module.html">Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stateful/optimizers.html">Optimizers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stateful/sequential.html">Sequential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/module.html">Module</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -210,8 +215,6 @@
         <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">native_args</span><span class="p">,</span> <span class="o">**</span><span class="n">native_kwargs</span><span class="p">)</span>
 
     <span class="n">new_fn</span><span class="o">.</span><span class="n">inputs_to_native_arrays</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&quot;array_spec&quot;</span><span class="p">):</span>
-        <span class="n">new_fn</span><span class="o">.</span><span class="n">array_spec</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">array_spec</span>
     <span class="k">return</span> <span class="n">new_fn</span></div>
 
 
@@ -242,8 +245,6 @@
         <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">ivy_args</span><span class="p">,</span> <span class="o">**</span><span class="n">ivy_kwargs</span><span class="p">)</span>
 
     <span class="n">new_fn</span><span class="o">.</span><span class="n">inputs_to_ivy_arrays</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&quot;array_spec&quot;</span><span class="p">):</span>
-        <span class="n">new_fn</span><span class="o">.</span><span class="n">array_spec</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">array_spec</span>
     <span class="k">return</span> <span class="n">new_fn</span></div>
 
 
@@ -272,8 +273,6 @@
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">to_ivy</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="n">nested</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_derived</span><span class="o">=</span><span class="p">{</span><span class="nb">tuple</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 
     <span class="n">new_fn</span><span class="o">.</span><span class="n">outputs_to_ivy_arrays</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&quot;array_spec&quot;</span><span class="p">):</span>
-        <span class="n">new_fn</span><span class="o">.</span><span class="n">array_spec</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">array_spec</span>
     <span class="k">return</span> <span class="n">new_fn</span></div>
 
 
@@ -319,8 +318,6 @@
         <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="n">new_fn</span><span class="o">.</span><span class="n">infer_dtype</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&quot;array_spec&quot;</span><span class="p">):</span>
-        <span class="n">new_fn</span><span class="o">.</span><span class="n">array_spec</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">array_spec</span>
     <span class="k">return</span> <span class="n">new_fn</span></div>
 
 
@@ -358,8 +355,6 @@
         <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="n">new_fn</span><span class="o">.</span><span class="n">infer_device</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&quot;array_spec&quot;</span><span class="p">):</span>
-        <span class="n">new_fn</span><span class="o">.</span><span class="n">array_spec</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">array_spec</span>
     <span class="k">return</span> <span class="n">new_fn</span></div>
 
 
@@ -407,8 +402,6 @@
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">inplace_update</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">ret</span><span class="p">)</span>
 
     <span class="n">new_fn</span><span class="o">.</span><span class="n">handle_out_argument</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&quot;array_spec&quot;</span><span class="p">):</span>
-        <span class="n">new_fn</span><span class="o">.</span><span class="n">array_spec</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">array_spec</span>
     <span class="k">return</span> <span class="n">new_fn</span></div>
 
 
@@ -452,8 +445,6 @@
         <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="n">new_fn</span><span class="o">.</span><span class="n">handle_nestable</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&quot;array_spec&quot;</span><span class="p">):</span>
-        <span class="n">new_fn</span><span class="o">.</span><span class="n">array_spec</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">array_spec</span>
     <span class="k">return</span> <span class="n">new_fn</span></div>
 
 
