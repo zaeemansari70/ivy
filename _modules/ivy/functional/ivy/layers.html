@@ -522,6 +522,9 @@
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;... q k, ... k f -&gt; ... q f&quot;</span><span class="p">,</span> <span class="n">attn</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
 
 
+<span class="n">scaled_dot_product_attention</span><span class="o">.</span><span class="n">unsupported_dtypes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;torch&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;float16&#39;</span><span class="p">,</span> <span class="p">)}</span>
+
+
 <div class="viewcode-block" id="multi_head_attention"><a class="viewcode-back" href="../../../../functional/ivy/layers/multi_head_attention.html#ivy.functional.ivy.layers.multi_head_attention">[docs]</a><span class="nd">@to_native_arrays_and_back</span>
 <span class="k">def</span> <span class="nf">multi_head_attention</span><span class="p">(</span>
     <span class="n">x</span><span class="p">,</span>
