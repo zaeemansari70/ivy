@@ -544,128 +544,6 @@
 
 <span class="c1"># Convolutions #</span>
 <span class="c1"># -------------#</span>
-<span class="k">class</span> <span class="nc">Conv1D</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-        <span class="n">input_channels</span><span class="p">,</span>
-        <span class="n">output_channels</span><span class="p">,</span>
-        <span class="n">filter_size</span><span class="p">,</span>
-        <span class="n">strides</span><span class="p">,</span>
-        <span class="n">padding</span><span class="p">,</span>
-        <span class="o">/</span><span class="p">,</span>
-        <span class="o">*</span><span class="p">,</span>
-        <span class="n">weight_initializer</span><span class="o">=</span><span class="n">GlorotUniform</span><span class="p">(),</span>
-        <span class="n">bias_initializer</span><span class="o">=</span><span class="n">Zeros</span><span class="p">(),</span>
-        <span class="n">data_format</span><span class="o">=</span><span class="s2">&quot;NWC&quot;</span><span class="p">,</span>
-        <span class="n">dilations</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">v</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        1D convolutional layer.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        input_channels</span>
-<span class="sd">            Number of input channels for the layer.</span>
-<span class="sd">        output_channels</span>
-<span class="sd">            Number of output channels for the layer.</span>
-<span class="sd">        filter_size</span>
-<span class="sd">            Size of the convolutional filter.</span>
-<span class="sd">        strides</span>
-<span class="sd">            The stride of the sliding window for each dimension of input.</span>
-<span class="sd">        padding</span>
-<span class="sd">            SAME&quot; or &quot;VALID&quot; indicating the algorithm, or</span>
-<span class="sd">            list indicating the per-dimension paddings.</span>
-<span class="sd">        weight_initializer</span>
-<span class="sd">            Initializer for the weights. Default is GlorotUniform.</span>
-<span class="sd">        bias_initializer</span>
-<span class="sd">            Initializer for the bias. Default is Zeros.</span>
-<span class="sd">        data_format</span>
-<span class="sd">            NWC&quot; or &quot;NCW&quot;. Defaults to &quot;NWC&quot;.</span>
-<span class="sd">        dilations</span>
-<span class="sd">            The dilation factor for each dimension of input. (Default value = 1)</span>
-<span class="sd">        device</span>
-<span class="sd">            device on which to create the layer&#39;s variables &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39;</span>
-<span class="sd">            etc. Default is cpu.</span>
-<span class="sd">        v</span>
-<span class="sd">            the variables for each of the linear layer, as a container,</span>
-<span class="sd">            constructed internally by default.</span>
-<span class="sd">        dtype</span>
-<span class="sd">            the desired data type of the internal variables to be created if not</span>
-<span class="sd">             provided. Default is None.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_input_channels</span> <span class="o">=</span> <span class="n">input_channels</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_output_channels</span> <span class="o">=</span> <span class="n">output_channels</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_filter_size</span> <span class="o">=</span> <span class="n">filter_size</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_strides</span> <span class="o">=</span> <span class="n">strides</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_padding</span> <span class="o">=</span> <span class="n">padding</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_w_shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">filter_size</span><span class="p">,</span> <span class="n">input_channels</span><span class="p">,</span> <span class="n">output_channels</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_b_shape</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">output_channels</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">data_format</span> <span class="o">==</span> <span class="s2">&quot;NWC&quot;</span>
-            <span class="k">else</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">output_channels</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_w_init</span> <span class="o">=</span> <span class="n">weight_initializer</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_b_init</span> <span class="o">=</span> <span class="n">bias_initializer</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_data_format</span> <span class="o">=</span> <span class="n">data_format</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_dilations</span> <span class="o">=</span> <span class="n">dilations</span>
-        <span class="n">Module</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">_create_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Create internal variables for the layer</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        device</span>
-<span class="sd">            device on which to create the layer&#39;s variables &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39;</span>
-<span class="sd">            etc. Default is cpu.</span>
-<span class="sd">        dtype</span>
-<span class="sd">            the desired data type of the internal variables to be created.</span>
-<span class="sd">             Default is None.</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="s2">&quot;w&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w_init</span><span class="o">.</span><span class="n">create_variables</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_w_shape</span><span class="p">,</span>
-                <span class="n">device</span><span class="p">,</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_output_channels</span><span class="p">,</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_input_channels</span><span class="p">,</span>
-                <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
-            <span class="p">),</span>
-            <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_b_init</span><span class="o">.</span><span class="n">create_variables</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_b_shape</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output_channels</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_channels</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span>
-            <span class="p">),</span>
-        <span class="p">}</span>
-
-    <span class="k">def</span> <span class="nf">_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Perform forward pass of the Conv1D layer.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        inputs</span>
-<span class="sd">            Inputs to process *[batch_size,w,d_in]*</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        ret</span>
-<span class="sd">            The outputs following the conv1d layer *[batch_size,new_w,d_out]*</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">(</span>
-            <span class="n">ivy</span><span class="o">.</span><span class="n">conv1d</span><span class="p">(</span>
-                <span class="n">inputs</span><span class="p">,</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">w</span><span class="p">,</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_strides</span><span class="p">,</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_padding</span><span class="p">,</span>
-                <span class="n">data_format</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_data_format</span><span class="p">,</span>
-                <span class="n">dilations</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dilations</span><span class="p">,</span>
-            <span class="p">)</span>
-            <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">b</span>
-        <span class="p">)</span>
 
 
 <div class="viewcode-block" id="Conv1D"><a class="viewcode-back" href="../../../stateful/layers/Conv1D.html#ivy.stateful.layers.Conv1D">[docs]</a><span class="k">class</span> <span class="nc">Conv1D</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
@@ -1526,8 +1404,6 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">input_channels</span><span class="p">,</span>
         <span class="n">output_channels</span><span class="p">,</span>
-        <span class="o">/</span><span class="p">,</span>
-        <span class="o">*</span><span class="p">,</span>
         <span class="n">weight_initializer</span><span class="o">=</span><span class="n">GlorotUniform</span><span class="p">(),</span>
         <span class="n">num_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
         <span class="n">return_sequence</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
