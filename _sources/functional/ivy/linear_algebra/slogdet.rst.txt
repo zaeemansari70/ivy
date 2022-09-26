@@ -3,9 +3,30 @@ slogdet
 
 .. autofunction:: ivy.functional.ivy.linear_algebra.slogdet
 
+.. autofunction:: ivy.container.container_methods.slogdet
+
 .. autofunction:: ivy.container.container_methods.static_slogdet
 
-.. autofunction:: ivy.container.container_methods.slogdet
+.. list-table:: Device Support
+   :widths: 20 20 20 20 20
+   :header-rows: 1
+
+   * - Device
+     - JAX
+     - NumPy
+     - TensorFlow
+     - PyTorch
+   * - CPU
+     - ✅
+     - ✅
+     - ✅
+     - ✅
+   * - GPU
+     - ❌
+     - ❌
+     - ❌
+     - ❌
+
 |
 | **Supported Frameworks:**
 
