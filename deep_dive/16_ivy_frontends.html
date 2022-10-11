@@ -521,6 +521,9 @@ for common array processing functions, such as <code class="xref py py-func docu
 and <code class="xref py py-func docutils literal notranslate"><span class="pre">add()</span></code>.
 This simple design choice comes with many advantages, some of which are explained
 in our <a class="reference internal" href="../design/ivy_as_a_framework/ivy_array.html#ivy-array"><span class="std std-ref">Ivy Array</span></a> section.</p>
+<p><strong>Important Note</strong>
+Before implementing the instance method or special method, make sure that the regular function in the specific
+frontend is already implemented.</p>
 <p>In order to implement Ivy’s frontend APIs to the extent that is required for arbitrary
 code transpilations, it’s necessary for us to also implement these instance methods
 and special methods of the framework-specific array classes (<code class="xref py py-class docutils literal notranslate"><span class="pre">tf.Tensor</span></code>,
