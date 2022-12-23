@@ -540,15 +540,11 @@
             <span class="c1"># compute return, with backend inplace update handled by</span>
             <span class="c1"># the backend function</span>
             <span class="n">ret</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">native_out</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="k">def</span> <span class="nf">ef_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
-                <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-            <span class="n">ivy</span><span class="o">.</span><span class="n">nested_multi_map</span><span class="p">(</span><span class="n">ef_function</span><span class="p">,</span> <span class="p">[</span><span class="n">out</span><span class="p">,</span> <span class="n">ret</span><span class="p">])</span>
-            <span class="c1"># if isinstance(ret, (tuple, list)):</span>
-            <span class="c1">#     for i in range(len(ret)):</span>
-            <span class="c1">#         out[i].data = ivy.to_native(ret[i])</span>
-            <span class="c1"># else:</span>
-            <span class="c1">#     out.data = ivy.to_native(ret)</span>
-            <span class="c1"># out = ivy.nested_map(test_ret, ivy.zeros_like, include_derived=True)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ret</span><span class="p">)):</span>
+                    <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">to_native</span><span class="p">(</span><span class="n">ret</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">out</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">to_native</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">out</span>
         <span class="c1"># compute return, and then handle the inplace update explicitly</span>
 
