@@ -539,6 +539,7 @@
             <span class="n">native_out</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">to_native</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
             <span class="c1"># compute return, with backend inplace update handled by</span>
             <span class="c1"># the backend function</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;native_out = &quot;</span><span class="p">,</span> <span class="n">native_out</span><span class="p">)</span>
             <span class="n">ret</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">native_out</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="k">def</span> <span class="nf">ef_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
                 <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
