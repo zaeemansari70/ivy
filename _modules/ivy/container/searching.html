@@ -53,7 +53,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/experimental.html">Experimental</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/constants.html">Constants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/control_flow_ops.html">Control flow ops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/creation.html">Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/data_type.html">Data type</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/device.html">Device</a></li>
@@ -152,7 +151,7 @@
         <span class="o">*</span><span class="p">,</span>
         <span class="n">axis</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">keepdims</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">dtype</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDtype</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">output_dtype</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDtype</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">select_last_index</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
@@ -172,7 +171,7 @@
 <span class="sd">            If this is set to True, the axes which are reduced are left in the result as</span>
 <span class="sd">            dimensions with size one. With this option, the result will broadcast</span>
 <span class="sd">            correctly against the array.</span>
-<span class="sd">        dtype</span>
+<span class="sd">        output_dtype</span>
 <span class="sd">             Optional data type of the output array.</span>
 <span class="sd">        out</span>
 <span class="sd">            If provided, the result will be inserted into this array. It should be of</span>
@@ -202,7 +201,7 @@
             <span class="n">x</span><span class="p">,</span>
             <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
             <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">,</span>
-            <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+            <span class="n">output_dtype</span><span class="o">=</span><span class="n">output_dtype</span><span class="p">,</span>
             <span class="n">select_last_index</span><span class="o">=</span><span class="n">select_last_index</span><span class="p">,</span>
             <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
         <span class="p">)</span></div>
@@ -213,7 +212,7 @@
         <span class="o">*</span><span class="p">,</span>
         <span class="n">axis</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">keepdims</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">dtype</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDtype</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">output_dtype</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDtype</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">select_last_index</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
@@ -233,7 +232,7 @@
 <span class="sd">            If this is set to True, the axes which are reduced are left in the result as</span>
 <span class="sd">            dimensions with size one. With this option, the result will broadcast</span>
 <span class="sd">            correctly against the array.</span>
-<span class="sd">        dtype</span>
+<span class="sd">        output_dtype</span>
 <span class="sd">            Optional output dtype of the container.</span>
 <span class="sd">        out</span>
 <span class="sd">            If provided, the result will be inserted into this array. It should be of</span>
@@ -263,7 +262,7 @@
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
             <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">,</span>
-            <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+            <span class="n">output_dtype</span><span class="o">=</span><span class="n">output_dtype</span><span class="p">,</span>
             <span class="n">select_last_index</span><span class="o">=</span><span class="n">select_last_index</span><span class="p">,</span>
             <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
         <span class="p">)</span></div>
