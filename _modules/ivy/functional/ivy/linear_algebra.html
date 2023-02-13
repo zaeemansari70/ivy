@@ -1032,6 +1032,12 @@
 <span class="sd">        if True, ``x1`` is transposed before multiplication.</span>
 <span class="sd">    transpose_b</span>
 <span class="sd">        if True, ``x2`` is transposed before multiplication.</span>
+<span class="sd">    adjoint_a</span>
+<span class="sd">        If True, takes the conjugate of the matrix then the transpose of the matrix.</span>
+<span class="sd">        adjoint_a and transpose_a can not be true at the same time.</span>
+<span class="sd">    adjoint_b</span>
+<span class="sd">        If True, takes the conjugate of the matrix then the transpose of the matrix.</span>
+<span class="sd">        adjoint_b and transpose_b can not be true at the same time.</span>
 <span class="sd">    out</span>
 <span class="sd">        optional output array, for writing the result to. It must have a shape that the</span>
 <span class="sd">        inputs broadcast to.</span>
@@ -1521,6 +1527,8 @@
 <span class="sd">    x</span>
 <span class="sd">        input array having shape ``(..., M, N)`` and whose innermost two</span>
 <span class="sd">        dimensions form ``MxN`` matrices.</span>
+<span class="sd">    conjugate</span>
+<span class="sd">        If True, takes the conjugate of the matrix.</span>
 <span class="sd">    out</span>
 <span class="sd">        optional output array, for writing the result to. It must have a</span>
 <span class="sd">        shape that the inputs broadcast to.</span>
