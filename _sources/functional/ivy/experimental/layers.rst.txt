@@ -26,6 +26,10 @@ Layers
    layers/embedding.rst
    layers/dft.rst
    layers/interp.rst
+   layers/paddedRow.rst
+   layers/polynomial_calclulation.rst
+   layers/cubic.rst
+   layers/bicubic.rst
    layers/interpolate.rst
    layers/padding_ceil_mode.rst
 
