@@ -516,6 +516,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/interp.html">interp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/compute_weight_mat.html">compute_weight_mat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/upsample_bicubic2d_default.html">upsample_bicubic2d_default</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="experimental/interpolate.html">interpolate</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-35"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="experimental/interpolate/interpolate_functional.html">ivy.interpolate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="experimental/interpolate/interpolate_array.html">ivy.Array.interpolate</a></li>
@@ -1431,7 +1432,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="device/as_ivy_dev.html">as_ivy_dev</a></li>
 <li class="toctree-l2"><a class="reference internal" href="device/as_native_dev.html">as_native_dev</a></li>
-<li class="toctree-l2"><a class="reference internal" href="device/clear_cached_mem_on_dev.html">clear_cached_mem_on_dev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="device/clear_mem_on_dev.html">clear_mem_on_dev</a></li>
 <li class="toctree-l2"><a class="reference internal" href="device/total_mem_on_dev.html">total_mem_on_dev</a></li>
 <li class="toctree-l2"><a class="reference internal" href="device/used_mem_on_dev.html">used_mem_on_dev</a></li>
 <li class="toctree-l2"><a class="reference internal" href="device/percent_used_mem_on_dev.html">percent_used_mem_on_dev</a></li>
@@ -2090,6 +2091,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/interp.html">interp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/compute_weight_mat.html">compute_weight_mat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/upsample_bicubic2d_default.html">upsample_bicubic2d_default</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="experimental/interpolate.html">interpolate</a><input class="toctree-checkbox" id="toctree-checkbox-258" name="toctree-checkbox-258" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-258"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="experimental/interpolate/interpolate_functional.html">ivy.interpolate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="experimental/interpolate/interpolate_array.html">ivy.Array.interpolate</a></li>
@@ -4558,7 +4560,7 @@ instances in place of any of the arguments.</p>
 the output array is equal to n_rows. Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 <li><p><strong>k</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – index of the diagonal. A positive value refers to an upper diagonal, a negative (default: <code class="docutils literal notranslate"><span class="pre">0</span></code>)
 value to a lower diagonal, and 0 to the main diagonal. Default: <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
-<li><p><strong>batch_shape</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]) – optional input that determines returning identity array shape. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+<li><p><strong>batch_shape</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]]) – optional input that determines returning identity array shape. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
 Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 <li><p><strong>dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]]) – output array data type. If dtype is None, the output array data type must be the (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
 default floating-point data type. Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>

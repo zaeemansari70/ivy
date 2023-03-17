@@ -515,6 +515,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../experimental/interp.html">interp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../experimental/compute_weight_mat.html">compute_weight_mat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../experimental/upsample_bicubic2d_default.html">upsample_bicubic2d_default</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../experimental/interpolate.html">interpolate</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-35"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../experimental/interpolate/interpolate_functional.html">ivy.interpolate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../experimental/interpolate/interpolate_array.html">ivy.Array.interpolate</a></li>
@@ -1430,7 +1431,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../device/as_ivy_dev.html">as_ivy_dev</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../device/as_native_dev.html">as_native_dev</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../device/clear_cached_mem_on_dev.html">clear_cached_mem_on_dev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../device/clear_mem_on_dev.html">clear_mem_on_dev</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../device/total_mem_on_dev.html">total_mem_on_dev</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../device/used_mem_on_dev.html">used_mem_on_dev</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../device/percent_used_mem_on_dev.html">percent_used_mem_on_dev</a></li>
@@ -2089,6 +2090,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../experimental/interp.html">interp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../experimental/compute_weight_mat.html">compute_weight_mat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../experimental/upsample_bicubic2d_default.html">upsample_bicubic2d_default</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../experimental/interpolate.html">interpolate</a><input class="toctree-checkbox" id="toctree-checkbox-258" name="toctree-checkbox-258" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-258"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../experimental/interpolate/interpolate_functional.html">ivy.interpolate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../experimental/interpolate/interpolate_array.html">ivy.Array.interpolate</a></li>
@@ -4140,36 +4142,6 @@
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> instances in place of any of the arguments.</p></li>
 </ul>
 </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="ivy.array.array_methods.is_bool_dtype">
-<span class="sig-prename descclassname"><span class="pre">ivy.array.array_methods.</span></span><span class="sig-name descname"><span class="pre">is_bool_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/array/array_methods.html#is_bool_dtype"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.array.array_methods.is_bool_dtype" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="ivy.container.container_methods.is_bool_dtype">
-<span class="sig-prename descclassname"><span class="pre">ivy.container.container_methods.</span></span><span class="sig-name descname"><span class="pre">is_bool_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_chains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_apply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prune_unapplied</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_sequences</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/container/container_methods.html#is_bool_dtype"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.container.container_methods.is_bool_dtype" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="../../../data_classes/container/container/Container.html#ivy.container.container.Container" title="ivy.container.container.Container"><code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="ivy.container.container_methods.static_is_bool_dtype">
-<span class="sig-prename descclassname"><span class="pre">ivy.container.container_methods.</span></span><span class="sig-name descname"><span class="pre">static_is_bool_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype_in</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_chains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_apply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prune_unapplied</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_sequences</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/container/container_methods.html#static_is_bool_dtype"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.container.container_methods.static_is_bool_dtype" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="../../../data_classes/container/container/Container.html#ivy.container.container.Container" title="ivy.container.container.Container"><code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
